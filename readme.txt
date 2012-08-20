@@ -2,13 +2,14 @@ Lorem PHPsum (that's "Lorem Fipsum") is a random-text-generating PHP function.  
 
 BASIC USAGE:
 <?php
-echo phpsum(); // prints 20 random words enclosed in <p> tags, starting with the words "Lorem ipsum"...
+echo phpsum(); // prints 20 random words enclosed in <p> tags, starting with "Lorem ipsum"...
 ?>
 
 ADVANCED USAGE:
-But wait, there's more!  Just take a look at all these juicy options:
+But wait, there's more!
 
-// phpsum($minWords=20, $maxWords=null, $minnumParagraphs=1, $maxnumParagraphs=null, $duplicateParagraphs=false, $lorem=true, $periods=true, $caps=true, $html=true, $nums=false, $specialChars=false, $vowelSense=true, $doubleSpace=false, $minCharsInWords=2, $maxCharsInWords=8, $minWordsInSentences=4, $maxWordsInSentences=12)
+phpsum($minWords=20, $maxWords=null, $minnumParagraphs=1, $maxnumParagraphs=null, $duplicateParagraphs=false, $lorem=true, $periods=true, $caps=true, $html=true, $nums=false, $specialChars=false, $vowelSense=true, $doubleSpace=false, $minCharsInWords=2, $maxCharsInWords=8, $minWordsInSentences=4, $maxWordsInSentences=12)
+
 
 EXAMPLES:
 <?php

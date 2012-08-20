@@ -8,15 +8,15 @@ by Alex Moore
 _____________
 
 USAGE:
-echo loremIpsum();
+echo phpsum();
 or:
-echo loremIpsum(20,40,2,4);
+echo phpsum(20,40,2,4);
 
 OPTIONS:
-loremIpsum($minWords=20, $maxWords=null, $minNumParagraphs=1, $maxNumParagraphs=null, $duplicateParagraphs=false, $lorem=true, $periods=true, $caps=true, $html=true, $nums=false, $specialChars=false, $vowelSense=true, $doubleSpace=false, $minCharsInWords=2, $maxCharsInWords=8, $minWordsInSentences=4, $maxWordsInSentences=12)
+phpsum($minWords=20, $maxWords=null, $minNumParagraphs=1, $maxNumParagraphs=null, $duplicateParagraphs=false, $lorem=true, $periods=true, $caps=true, $html=true, $nums=false, $specialChars=false, $vowelSense=true, $doubleSpace=false, $minCharsInWords=2, $maxCharsInWords=8, $minWordsInSentences=4, $maxWordsInSentences=12)
 
 */
-function loremIpsum($minWords=20, $maxWords=null, $minNumParagraphs=1, $maxNumParagraphs=null, $duplicateParagraphs=false, $lorem=true, $periods=true, $caps=true, $html=true, $nums=false, $specialChars=false, $vowelSense=true, $doubleSpace=false, $minCharsInWords=2, $maxCharsInWords=8, $minWordsInSentences=4, $maxWordsInSentences=12) {
+function phpsum($minWords=20, $maxWords=null, $minNumParagraphs=1, $maxNumParagraphs=null, $duplicateParagraphs=false, $lorem=true, $periods=true, $caps=true, $html=true, $nums=false, $specialChars=false, $vowelSense=true, $doubleSpace=false, $minCharsInWords=2, $maxCharsInWords=8, $minWordsInSentences=4, $maxWordsInSentences=12) {
 	if (!is_int($minWords) || !is_int($maxWords) || !is_int($minNumParagraphs) || !is_int($maxNumParagraphs) || !is_int($minCharsInWords) || !is_int($maxCharsInWords) || !is_int($minWordsInSentences) || !is_int($maxWordsInSentences)) { return "Must be an integer."; }
 	if (!is_bool($duplicateParagraphs) || !is_bool($lorem) || !is_bool($periods) || !is_bool($caps) || !is_bool($html) || !is_bool($nums) || !is_bool($specialChars) || !is_bool($vowelSense) || !is_bool($doubleSpace)) { return "Must be a boolean (true or false)."; }
 	if ($minCharsInWords>$maxCharsInWords || $minWordsInSentences>$maxWordsInSentences) { return null; }
