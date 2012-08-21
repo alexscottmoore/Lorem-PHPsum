@@ -68,8 +68,9 @@ The array of arguments can be passed first or last in the function, like so:
 include "lorem-phpsum.php";
 
 echo phpsum($args, 20, 40);
+echo phpsum($args, 20, 40, 3);
 echo phpsum(20, 40, $args);
-echo phpsum(20, 40, 2, 1, $args);
+echo phpsum(20, 40, 3, 4, $args);
 echo phpsum($args);
 ?>
 
