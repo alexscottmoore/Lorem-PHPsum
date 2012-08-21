@@ -91,10 +91,10 @@ echo phpsum(4,8,2);
 // <p>Lupo cup re soc facasaty.</p>
 
 
-echo phpsum(4,8,2,4);
-// <p>Lorem ipsum gimebup fijoguf poho fi nutep.</p>
-// <p>Cyn beq fatemoj guj. Tyj.</p>
-// <p>Fo bod di.</p>
+echo phpsum(4,8,2,5);
+// <p>Lorem ipsum lacefic hebu.</p>
+// <p>Ta godycisu sa qasa no nacurej rotipa mametof tum.</p>
+// <p>Tulyjib facy pun mo. Mot mube sin musatudu tyfes macyb jen py dytar. Nyqapuli gecalej.</p>
 
 
 $args = array(

@@ -79,7 +79,7 @@ function phpsum($minWords=20, $maxWords=null, $minNumParagraphs=-1, $maxNumParag
 	if ($maxNumParagraphs!==null && is_int($maxNumParagraphs)) { $numParagraphs = mt_rand($minNumParagraphs,$maxNumParagraphs); } else { $numParagraphs = $minNumParagraphs; }
 	for ($i=0; $i<$numParagraphs; $i++) {
 		if ($maxWords!==null) { $numWords = mt_rand($minWords,$maxWords); } else { $numWords = $minWords; }
-		if ($lorem) {
+		if ($lorem && $i==0) {
 			if ($lorem && $i==0 && $numWords>2) { $myString="Lorem ipsum "; } elseif ($lorem && $i==0 && $numWords>1) { $myString="Lorem ipsum."; } elseif ($lorem && $i==0 && $numWords>0) { $myString="Lorem."; }
 			$numWords = $numWords-2;
 		}
