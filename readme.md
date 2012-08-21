@@ -65,11 +65,15 @@ The array of arguments can be passed first or last in the function, like so:
 ``` php
 
 <?php
+echo phpsum($args);
+echo phpsum($args, 20);
 echo phpsum($args, 20, 40);
 echo phpsum($args, 20, 40, 3);
+echo phpsum($args, 20, 40, 3, 5);
+echo phpsum(20, $args);
 echo phpsum(20, 40, $args);
-echo phpsum(20, 40, 3, 4, $args);
-echo phpsum($args);
+echo phpsum(20, 40, 3, $args);
+echo phpsum(20, 40, 3, 5, $args);
 ?>
 
 ```
@@ -119,9 +123,10 @@ $args = array(
 	'lorem' => 'false',
 	'periods' => 'false',
 	'caps' => 'false',
+	'nums' => 'true',
 	);
 echo phpsum($args, 15, 20, 1, 3);
-// mir te gibahe paca qij topi telij sede qogoci matyd dynusige bureb ta rohel raqepyde lupinu
+// 2eqej so bu 8yb gu5i6y 8o 6e0ily 5ycyro 3e9 ciquhe hedyqu6u 2enypa3y ce to2u5i3 3o8o3 se
 
 ?>
 
