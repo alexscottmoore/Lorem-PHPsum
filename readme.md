@@ -68,7 +68,9 @@ The array of arguments can be passed first or last in the function, like so:
 include "lorem-phpsum.php";
 
 echo phpsum($args, 20, 40);
-echo phpsum(20, 40, 2, $args);
+echo phpsum(20, 40, $args);
+echo phpsum(20, 40, 2, 1, $args);
+echo phpsum($args);
 ?>
 
 ```
@@ -83,16 +85,16 @@ echo phpsum();
 // Lorem ipsum ra pam cajubute sadaco qagan nibydyp mucy supeg fapotim jecydur coqipih. Mir gus pymyfab gy dafosufo qomocy hyceteg.
 
 
-echo phpsum(4,8);
+echo phpsum(4, 8);
 // Lorem ipsum fubopy nafi fo pi.
 
 
-echo phpsum(4,8,2);
+echo phpsum(4, 8, 2);
 // <p>Lorem ipsum sujoq puqyboc.</p>
 // <p>Lupo cup re soc facasaty.</p>
 
 
-echo phpsum(4,20,2,5);
+echo phpsum(4, 20, 2, 5);
 // <p>Lorem ipsum lacefic hebu.</p>
 // <p>Ta godycisu sa qasa no nacurej rotipa mametof tum.</p>
 // <p>Tulyjib facy pun mo. Mot mube sin musatudu tyfes macyb jen py dytar. Nyqapuli gecalej.</p>
@@ -102,7 +104,7 @@ $args = array(
 	'duplicateParagraphs' => 'true',
 	'lorem' => 'false',
 	);
-echo phpsum($args,15,20,2);
+echo phpsum($args, 15, 20, 2);
 // <p>Pijoto qecaje gegapa sydo tetegigi sipu diq. Can cujaniq tegebuny focijo muqe nisat fe jat dag by. Qumej.</p>
 // <p>Pijoto qecaje gegapa sydo tetegigi sipu diq. Can cujaniq tegebuny focijo muqe nisat fe jat dag by. Qumej.</p>
 
@@ -111,7 +113,7 @@ $args = array(
 	'html' => 'false',
 	'specialChars' => 'true',
 	);
-echo phpsum($args,20);
+echo phpsum($args, 20);
 // Lorem ipsum §i² ÃiÜ ‹e`a¦a$ áe¢ Ki 4iOy Äi Öee ¼oGeª xiliÙ. U a!e Ža6oô èaÜu.og xo soÏ »iäo. Haáe5u7 ³y8u¹ey.
 
 
@@ -120,7 +122,7 @@ $args = array(
 	'periods' => 'false',
 	'caps' => 'false',
 	);
-echo phpsum($args,30,30,1);
+echo phpsum($args, 30, 30, 1);
 // mir te gibahe paca qij topi telij sede qogoci matyd dynusige bureb ta rohel raqepyde lupinu mosafis ja lafidahi hyq su jur la feh hej pidib laf pudeby qyryfoh rihu
 
 ?>
