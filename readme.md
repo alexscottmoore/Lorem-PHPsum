@@ -91,7 +91,7 @@ echo phpsum(4,8,2);
 // <p>Lupo cup re soc facasaty.</p>
 
 
-echo phpsum(4,8,2,5);
+echo phpsum(4,20,2,5);
 // <p>Lorem ipsum lacefic hebu.</p>
 // <p>Ta godycisu sa qasa no nacurej rotipa mametof tum.</p>
 // <p>Tulyjib facy pun mo. Mot mube sin musatudu tyfes macyb jen py dytar. Nyqapuli gecalej.</p>
