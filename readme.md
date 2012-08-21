@@ -13,6 +13,7 @@ echo phpsum(); // prints 20 random words, starting with "Lorem ipsum"...
 ?>
 
 ```
+
 ## Advanced Usage
 
 But wait, there's more!
@@ -47,7 +48,7 @@ $args = array( // All parameters are OPTIONAL -- these are the defaults
 	'html' => 'true', 					// should we include <p> tags between paragraphs?
 	'nums' => 'false', 					// should we include random numbers in the output? 
 	'specialChars' => 'false', 			// should we include special characters in the output?
-	'vowelSense' => 'true', 			// should each word look a little more English-like (with vowels between consonants)?
+	'vowelSense' => 'true', 			// should each word look a little more Latin-like (with vowels between consonants)?
 	'doubleSpace' => 'false', 			// should we include double spaces between pargraphs?
 	'minCharsInWords' => 2,
 	'maxCharsInWords' => 8,
@@ -68,4 +69,50 @@ include "lorem-phpsum.php";
 
 echo phpsum($args, 20, 40);
 ?>
+
+```
+## Examples
+
+``` php
+
+<?php
+include "lorem-phpsum.php";
+
+echo phpsum();
+// Lorem ipsum ra pam cajubute sadaco qagan nibydyp mucy supeg fapotim jecydur coqipih. Mir gus pymyfab gy dafosufo qomocy hyceteg.
+
+
+echo phpsum(4,8);
+// Lorem ipsum fubopy nafi fo pi.
+
+
+echo phpsum(4,8,2);
+// <p>Lorem ipsum sujoq puqyboc.</p>
+// <p>Lupo cup re soc facasaty.</p>
+
+
+echo phpsum(4,8,2,4);
+// <p>Lorem ipsum gimebup fijoguf poho fi nutep.</p>
+// <p>Cyn beq fatemoj guj. Tyj.</p>
+// <p>Fo bod di.</p>
+
+
+$args = array(
+	'duplicateParagraphs' => 'true',
+	'lorem' => 'false',
+	);
+echo phpsum($args,15,20,2);
+//<p>Pijoto qecaje gegapa sydo tetegigi sipu diq. Can cujaniq tegebuny focijo muqe nisat fe jat dag by. Qumej.</p>
+//<p>Pijoto qecaje gegapa sydo tetegigi sipu diq. Can cujaniq tegebuny focijo muqe nisat fe jat dag by. Qumej.</p>
+
+
+$args = array(
+	'html' => 'false',
+	'specialChars' => 'true',
+	);
+echo phpsum($args,20);
+//Lorem ipsum §i² ÃiÜ ‹e`a¦a$ áe¢ Ki 4iOy Äi Öee ¼oGeª xiliÙ. U a!e Ža6oô èaÜu.og xo soÏ »iäo. Haáe5u7 ³y8u¹ey.
+
+?>
+
 ```

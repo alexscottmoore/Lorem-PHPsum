@@ -9,33 +9,42 @@ _____________
 
 BASIC USAGE:
 include "lorem-phpsum.php";
-echo phpsum(); // prints 20 random words, beginning with 'Lorem ipsum...'
+
+echo phpsum(20); // prints 20 random words
+echo phpsum(20, 40); // prints a random number of 20 to 40 words
+echo phpsum(20, 40, 2); // prints a random number of 20 to 40 words in 2 paragraphs
+echo phpsum(20, 40, 2, 4); // prints a random number of 20 to 40 words in a random number of 2 to 4 paragraphs
+
 
 ADVANCED USAGE:
 include "lorem-phpsum.php";
-echo phpsum();
-	'duplicateParagraphs' => 'false',
-	'lorem' => 'true',
-	'periods' => 'true',
-	'caps' => 'true',
-	'html' => 'true',
-	'nums' => 'false',
-	'specialChars' => 'false',
-	'vowelSense' => 'true',
-	'doubleSpace' => 'false',
+
+$args = array( // All parameters are OPTIONAL -- these are the defaults
+	'duplicateParagraphs' => 'false', 	// should all paragraphs be identical?
+	'lorem' => 'true', 					// should we begin with "Lorem ipsum..."?
+	'periods' => 'true', 				// should we include periods between sentences?
+	'caps' => 'true', 					// should each sentence start with a capital letter?
+	'html' => 'true', 					// should we include <p> tags between paragraphs?
+	'nums' => 'false', 					// should we include random numbers in the output? 
+	'specialChars' => 'false', 			// should we include special characters in the output?
+	'vowelSense' => 'true', 			// should each word look a little more Latin-like (with vowels between consonants)?
+	'doubleSpace' => 'false', 			// should we include double spaces between pargraphs?
 	'minCharsInWords' => 2,
 	'maxCharsInWords' => 8,
 	'minWordsInSentences' => 4,
 	'maxWordsInSentences' => 12,
+	);
+	
+echo phpsum(20, 40, 2, 4, $args);
 */
-function phpsum($minWords=20, $maxWords=null, $minNumParagraphs=-1, $maxNumParagraphs=1, $options=null) {
+function phpsum($minWords=20, $maxWords=null, $minNumParagraphs=-1, $maxNumParagraphs=null, $options=null) {
 	if (is_array($minWords)) { // if options array is placed first
 		$tempOptions = $options;
 		$options = $minWords;
 		$minWords = ($maxWords===null?20:$maxWords);
 		$maxWords = ($minNumParagraphs==-1?null:$minNumParagraphs);
-		$minNumParagraphs = ($maxNumParagraphs==1?-1:$maxNumParagraphs);
-		$maxNumParagraphs = ($tempOptions===null?1:$tempOptions);
+		$minNumParagraphs = ($maxNumParagraphs===null?-1:$maxNumParagraphs);
+		$maxNumParagraphs = ($tempOptions===null?null:$tempOptions);
 	}
 	if ($minNumParagraphs<0) {
 		$pTags=false;
@@ -62,8 +71,7 @@ function phpsum($minWords=20, $maxWords=null, $minNumParagraphs=-1, $maxNumParag
 	$maxWordsInSentences = (isset($options['maxWordsInSentences']) ? $options['maxWordsInSentences'] : 12);
 	
 	if (!is_int($minCharsInWords) || !is_int($maxCharsInWords) || !is_int($minWordsInSentences) || !is_int($maxWordsInSentences)) { return "Must be an integer."; }
-	if ($minCharsInWords>$maxCharsInWords || $minNumParagraphs>$maxNumParagraphs || $minWordsInSentences>$maxWordsInSentences) { return "Min cannot be larger than max."; }
-	echo "1:$minCharsInWords 2:$maxCharsInWords 3:$minNumParagraphs 4:$maxNumParagraphs 5:$minWordsInSentences 6:$maxWordsInSentences 7:$minWords 8:$maxWords<br />";
+	if ($minCharsInWords>$maxCharsInWords || $minWordsInSentences>$maxWordsInSentences) { return "Min cannot be larger than max."; }
 	if ($minCharsInWords<=0 || $maxCharsInWords<=0 || $minNumParagraphs<=0 || $minWordsInSentences<=0 || $maxWordsInSentences<=0 || $minWords<=0) { return "Must be greater than 0."; }
 	if (($lorem==true && $minWordsInSentences<2) || $minWordsInSentences<=0) { return "Sentences are too short.".($lorem==true && $minWordsInSentences<2?" Set lorem='false' or minWordsInSentences to 2 or above.":""); }
 	
@@ -71,7 +79,6 @@ function phpsum($minWords=20, $maxWords=null, $minNumParagraphs=-1, $maxNumParag
 	if ($maxNumParagraphs!==null && is_int($maxNumParagraphs)) { $numParagraphs = mt_rand($minNumParagraphs,$maxNumParagraphs); } else { $numParagraphs = $minNumParagraphs; }
 	for ($i=0; $i<$numParagraphs; $i++) {
 		if ($maxWords!==null) { $numWords = mt_rand($minWords,$maxWords); } else { $numWords = $minWords; }
-		echo "9:$numWords<br />";
 		if ($lorem) {
 			if ($lorem && $i==0 && $numWords>2) { $myString="Lorem ipsum "; } elseif ($lorem && $i==0 && $numWords>1) { $myString="Lorem ipsum."; } elseif ($lorem && $i==0 && $numWords>0) { $myString="Lorem."; }
 			$numWords = $numWords-2;
