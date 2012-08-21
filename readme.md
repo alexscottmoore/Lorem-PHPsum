@@ -1,6 +1,6 @@
 # Lorem-PHPsum
 
-Lorem PHPsum (that's "Lorem Fipsum") is a random-text-generating PHP function. It is especially useful for creating blocks of text as placeholders in your web projects.
+Lorem PHPsum (that's pronounced "Lorem Fipsum") is a random-text lorem ipsum generator for PHP. It is especially useful for creating blocks of text as placeholders in your web projects.
 
 ## Basic Usage
 
@@ -23,7 +23,7 @@ But wait, there's more!
 <?php
 include "lorem-phpsum.php";
 
-// phpsum($minWords, $maxWords, $minNumParagraphs, $maxNumParagraphs);
+// phpsum($minWords, $maxWords, $minNumParagraphs, $maxNumParagraphs, $options);
 echo phpsum(20); // prints 20 random words
 echo phpsum(20, 40); // prints a random number of 20 to 40 words
 echo phpsum(20, 40, 2); // prints a random number of 20 to 40 words in 2 paragraphs
@@ -60,7 +60,7 @@ echo phpsum(20, 40, 2, 4, $args);
 ?>
 
 ```
-Alternatively, the arguments can be placed first in the function, like so:
+The array of arguments can be passed first or last in the function, like so:
 
 ``` php
 
@@ -68,6 +68,7 @@ Alternatively, the arguments can be placed first in the function, like so:
 include "lorem-phpsum.php";
 
 echo phpsum($args, 20, 40);
+echo phpsum(20, 40, 2, $args);
 ?>
 
 ```

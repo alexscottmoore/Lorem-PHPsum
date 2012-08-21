@@ -38,6 +38,7 @@ $args = array( // All parameters are OPTIONAL -- these are the defaults
 echo phpsum(20, 40, 2, 4, $args);
 */
 function phpsum($minWords=20, $maxWords=null, $minNumParagraphs=-1, $maxNumParagraphs=null, $options=null) {
+	if (is_array($maxWords)) {$options = $maxWords; $maxWords=null; } elseif (is_array($minNumParagraphs)) { $options = $minNumParagraphs; $minNumParagraphs=-1; } elseif (is_array($maxNumParagraphs)) { $options = $maxNumParagraphs; $maxNumParagraphs=null; } // if options array is placed last
 	if (is_array($minWords)) { // if options array is placed first
 		$tempOptions = $options;
 		$options = $minWords;
