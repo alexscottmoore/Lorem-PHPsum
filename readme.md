@@ -108,12 +108,11 @@ echo phpsum($args, 15, 20, 2);
 
 
 $args = array(
-	'html' => 'false',
 	'specialChars' => 'true',
 	'minWordsInSentences' => 10,
 	);
-echo phpsum($args, 20);
-// Lorem ipsum Íe|iöeÉ âi†y¤ …i,aE êi ©a †oƒ ÇyÍ °u…y, aJa§oìy *a`eI Qoı ¯uèo¼iZ. Ÿy ÇoæyßuÊ ‘e8 ^aNe ¡a%u¦ ÿo˜uê.
+echo phpsum($args, 10);
+// Lorem ipsum yso†eÌi »oÇaü ¢eÈeAu• duŒiì !o™y-y Òy:u» Şe>eãe ku·eÅ.
 
 
 $args = array(
