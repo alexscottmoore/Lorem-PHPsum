@@ -2,40 +2,51 @@ Lorem PHPsum (that's "Lorem Fipsum") is a random-text-generating PHP function.  
 
 BASIC USAGE:
 <?php
-echo phpsum(); // prints 20 random words enclosed in <p> tags, starting with "Lorem ipsum"...
+include "lorem-phpsum.php";
+echo phpsum(); // prints 20 random words, starting with "Lorem ipsum"...
 ?>
+
 
 ADVANCED USAGE:
 But wait, there's more!
 
-phpsum($minWords=20, $maxWords=null, $minnumParagraphs=1, $maxnumParagraphs=null, $duplicateParagraphs=false, $lorem=true, $periods=true, $caps=true, $html=true, $nums=false, $specialChars=false, $vowelSense=true, $doubleSpace=false, $minCharsInWords=2, $maxCharsInWords=8, $minWordsInSentences=4, $maxWordsInSentences=12)
-
-
-EXAMPLES:
 <?php
-echo phpsum(20,40); // prints a random number of 20 to 40 words
+include "lorem-phpsum.php";
+// echo phpsum($minWords, $maxWords, $minNumParagraphs, $maxNumParagraphs);
+echo phpsum(20); // prints 20 random words
+echo phpsum(20, 40); // prints a random number of 20 to 40 words
+echo phpsum(20, 40, 2); // prints a random number of 20 to 40 words in 2 paragraphs
+echo phpsum(20, 40, 2, 4); // prints a random number of 20 to 40 words in a random number of 2 to 4 paragraphs
+?>
 
-echo phpsum(20,40,2,4) // prints a random number of 20 to 40 words in a random number of 2 to 4 paragraphs
 
-echo phpsum(20,40,2,4,true) // same as above, but paragraphs will all be identical
+OPTIONAL ARGUMENTS:
+The function also accepts any number of the following optional arguments.  Defaults are depicted below:
 
-echo phpsum(20,40,2,4,true,false) // same as above, but with "Lorem Ipsum" left out
+<?php
+include "lorem-phpsum.php";
 
-echo phpsum(20,40,2,4,true,false,false) // no periods (.) or full stops
+$args = array( // all parameters are OPTIONAL
+			'duplicateParagraphs' => 'false', 	// should all paragraphs be identical?
+			'lorem' => 'true', 					// should we begin with "Lorem ipsum..."?
+			'periods' => 'true', 				// should we include periods between sentences?
+			'caps' => 'true', 					// should each sentence start with a capital letter?
+			'html' => 'true', 					// should we include <p> tags between paragraphs?
+			'nums' => 'false', 					// should we include random numbers in the output? 
+			'specialChars' => 'false', 			// should we include special characters in the output?
+			'vowelSense' => 'true', 			// should each word look a little more English-like (with vowels between consonants?)
+			'doubleSpace' => 'false', 			// should we include double spaces between pargraphs?
+			'minCharsInWords' => 2,
+			'maxCharsInWords' => 8,
+			'minWordsInSentences' => 4,
+			'maxWordsInSentences' => 12,
+			);
+echo phpsum(20, 40, 2, 4, $args);
+?>
 
-echo phpsum(20,40,2,4,true,false,true,false) // no capital letters
 
-echo phpsum(20,40,2,4,true,false,true,true,false) // text only (no <p> tags)
-
-echo phpsum(20,40,2,4,true,false,true,true,false,true) // throw in some integers
-
-echo phpsum(20,40,2,4,true,false,true,true,false,false,true) // throw in special characters (chaos!)
-
-echo phpsum(20,40,2,4,true,false,true,true,false,false,false,true) // ignore the rule to alternate between vowels and consonants
-
-echo phpsum(20,40,2,4,true,false,true,true,false,false,false,true,false) // get rid of double spaces after sentences
-
-echo phpsum(20,40,2,4,true,false,true,true,false,false,false,true,true,2,8) // all words will have between 2 and 8 characters
-
-echo phpsum(20,40,2,4,true,false,true,true,false,false,false,true,true,2,8,4,12) // all sentences will have between 4 and 12 words
+Alternatively, the arguments can be placed first in the function, like so:
+<?php
+include "lorem-phpsum.php";
+echo phpsum($args, 20, 40);
 ?>
