@@ -9,7 +9,7 @@ Lorem PHPsum (that's pronounced "Lorem Fipsum") is a random-text lorem ipsum gen
 <?php
 include "lorem-phpsum.php";
 
-echo phpsum(); // prints 20 random words, starting with "Lorem ipsum"...
+echo phpsum(); // prints 100 random words, starting with "Lorem ipsum"...
 ?>
 
 ```
@@ -26,7 +26,7 @@ include "lorem-phpsum.php";
 // phpsum($minWords, $maxWords, $minNumParagraphs, $maxNumParagraphs, $options);
 echo phpsum(20); // prints 20 random words
 echo phpsum(20, 40); // prints a random number of 20 to 40 words
-echo phpsum(20, 40, 2); // prints a random number of 20 to 40 words in 2 paragraphs
+echo phpsum(20, 40, 2); // prints a random number of 20 to 40 words in 2 paragraphs (with <p> tags)
 echo phpsum(20, 40, 2, 4); // prints a random number of 20 to 40 words in a random number of 2 to 4 paragraphs
 ?>
 
@@ -45,7 +45,7 @@ $args = array( // All parameters are OPTIONAL -- these are the defaults
 	'lorem' => 'true', 					// should we begin with "Lorem ipsum..."?
 	'periods' => 'true', 				// should we include periods between sentences?
 	'caps' => 'true', 					// should each sentence start with a capital letter?
-	'html' => 'true', 					// should we include <p> tags between paragraphs?
+	'html' => 'true', 					// should we include <p> tags between paragraphs? otherwise use tabs and line breaks
 	'nums' => 'false', 					// should we include random numbers in the output? 
 	'specialChars' => 'false', 			// should we include special characters in the output?
 	'vowelSense' => 'true', 			// should each word look a little more Latin-like (with vowels between consonants)?
@@ -83,8 +83,7 @@ echo phpsum($args);
 include "lorem-phpsum.php";
 
 echo phpsum();
-// Lorem ipsum ra pam cajubute sadaco qagan nibydyp mucy supeg fapotim jecydur coqipih. Mir gus pymyfab gy dafosufo qomocy hyceteg.
-
+// Lorem ipsum ros bebune ridy cujerusa pycetin fegynuro dejo. Qijumo gu su segaly... (for 100 words)
 
 echo phpsum(4, 8);
 // Lorem ipsum fubopy nafi fo pi.

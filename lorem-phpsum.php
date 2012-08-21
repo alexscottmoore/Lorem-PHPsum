@@ -10,6 +10,7 @@ _____________
 BASIC USAGE:
 include "lorem-phpsum.php";
 
+echo phpsum(); // print 100 random words
 echo phpsum(20); // prints 20 random words
 echo phpsum(20, 40); // prints a random number of 20 to 40 words
 echo phpsum(20, 40, 2); // prints a random number of 20 to 40 words in 2 paragraphs
@@ -24,7 +25,7 @@ $args = array( // All parameters are OPTIONAL -- these are the defaults
 	'lorem' => 'true', 					// should we begin with "Lorem ipsum..."?
 	'periods' => 'true', 				// should we include periods between sentences?
 	'caps' => 'true', 					// should each sentence start with a capital letter?
-	'html' => 'true', 					// should we include <p> tags between paragraphs?
+	'html' => 'true', 					// should we include <p> tags between paragraphs? otherwise use tabs and line breaks
 	'nums' => 'false', 					// should we include random numbers in the output? 
 	'specialChars' => 'false', 			// should we include special characters in the output?
 	'vowelSense' => 'true', 			// should each word look a little more Latin-like (with vowels between consonants)?
@@ -37,12 +38,12 @@ $args = array( // All parameters are OPTIONAL -- these are the defaults
 	
 echo phpsum(20, 40, 2, 4, $args);
 */
-function phpsum($minWords=20, $maxWords=null, $minNumParagraphs=-1, $maxNumParagraphs=null, $options=null) {
+function phpsum($minWords=100, $maxWords=null, $minNumParagraphs=-1, $maxNumParagraphs=null, $options=null) {
 	if (is_array($maxWords)) {$options = $maxWords; $maxWords=null; } elseif (is_array($minNumParagraphs)) { $options = $minNumParagraphs; $minNumParagraphs=-1; } elseif (is_array($maxNumParagraphs)) { $options = $maxNumParagraphs; $maxNumParagraphs=null; } // if options array is placed last
 	if (is_array($minWords)) { // if options array is placed first
 		$tempOptions = $options;
 		$options = $minWords;
-		$minWords = ($maxWords===null?20:$maxWords);
+		$minWords = ($maxWords===null?100:$maxWords);
 		$maxWords = ($minNumParagraphs==-1?null:$minNumParagraphs);
 		$minNumParagraphs = ($maxNumParagraphs===null?-1:$maxNumParagraphs);
 		$maxNumParagraphs = ($tempOptions===null?null:$tempOptions);
