@@ -113,7 +113,7 @@ $args = array(
 	'minWordsInSentences' => 10,
 	);
 echo phpsum($args, 20);
-// Lorem ipsum yba; ïi{ žy/ul ÈyCy Ke±yu Æa5y§u suÿe ¯aäoî e® [i£. ªyºoÁe8y ¸o5o »yÆoæi> BuZ ìa®i <y”a ‡y’y˜u §eèo.
+// Lorem ipsum Íe|iöeÉ âi†y¤ …i,aE êi ©a †oƒ ÇyÍ °u…y, aJa§oìy *a`eI Qoý ¯uèo¼iZ. Ÿy ÇoæyßuÊ ‘e8 ^aNe ¡a%u¦ ÿo˜uê.
 
 
 $args = array(
