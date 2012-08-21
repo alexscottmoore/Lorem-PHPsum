@@ -65,8 +65,6 @@ The array of arguments can be passed first or last in the function, like so:
 ``` php
 
 <?php
-include "lorem-phpsum.php";
-
 echo phpsum($args, 20, 40);
 echo phpsum($args, 20, 40, 3);
 echo phpsum(20, 40, $args);
@@ -112,9 +110,10 @@ echo phpsum($args, 15, 20, 2);
 $args = array(
 	'html' => 'false',
 	'specialChars' => 'true',
+	'minWordsInSentences' => 10,
 	);
 echo phpsum($args, 20);
-// Lorem ipsum §i² ÃiÜ ‹e`a¦a$ áe¢ Ki 4iOy Äi Öee ¼oGeª xiliÙ. U a!e Ža6oô èaÜu.og xo soÏ »iäo. Haáe5u7 ³y8u¹ey.
+// Lorem ipsum yba; ïi{ žy/ul ÈyCy Ke±yu Æa5y§u suÿe ¯aäoî e® [i£. ªyºoÁe8y ¸o5o »yÆoæi> BuZ ìa®i <y”a ‡y’y˜u §eèo.
 
 
 $args = array(
@@ -122,8 +121,8 @@ $args = array(
 	'periods' => 'false',
 	'caps' => 'false',
 	);
-echo phpsum($args, 30, 30, 1);
-// mir te gibahe paca qij topi telij sede qogoci matyd dynusige bureb ta rohel raqepyde lupinu mosafis ja lafidahi hyq su jur la feh hej pidib laf pudeby qyryfoh rihu
+echo phpsum($args, 15, 20, 1, 3);
+// mir te gibahe paca qij topi telij sede qogoci matyd dynusige bureb ta rohel raqepyde lupinu
 
 ?>
 
