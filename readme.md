@@ -102,8 +102,8 @@ $args = array(
 	'lorem' => 'false',
 	);
 echo phpsum($args,15,20,2);
-//<p>Pijoto qecaje gegapa sydo tetegigi sipu diq. Can cujaniq tegebuny focijo muqe nisat fe jat dag by. Qumej.</p>
-//<p>Pijoto qecaje gegapa sydo tetegigi sipu diq. Can cujaniq tegebuny focijo muqe nisat fe jat dag by. Qumej.</p>
+// <p>Pijoto qecaje gegapa sydo tetegigi sipu diq. Can cujaniq tegebuny focijo muqe nisat fe jat dag by. Qumej.</p>
+// <p>Pijoto qecaje gegapa sydo tetegigi sipu diq. Can cujaniq tegebuny focijo muqe nisat fe jat dag by. Qumej.</p>
 
 
 $args = array(
@@ -111,7 +111,16 @@ $args = array(
 	'specialChars' => 'true',
 	);
 echo phpsum($args,20);
-//Lorem ipsum §i² ÃiÜ ‹e`a¦a$ áe¢ Ki 4iOy Äi Öee ¼oGeª xiliÙ. U a!e Ža6oô èaÜu.og xo soÏ »iäo. Haáe5u7 ³y8u¹ey.
+// Lorem ipsum §i² ÃiÜ ‹e`a¦a$ áe¢ Ki 4iOy Äi Öee ¼oGeª xiliÙ. U a!e Ža6oô èaÜu.og xo soÏ »iäo. Haáe5u7 ³y8u¹ey.
+
+
+$args = array(
+	'lorem' => 'false',
+	'periods' => 'false',
+	'caps' => 'false',
+	);
+echo phpsum($args,30,30,1);
+// mir te gibahe paca qij topi telij sede qogoci matyd dynusige bureb ta rohel raqepyde lupinu mosafis ja lafidahi hyq su jur la feh hej pidib laf pudeby qyryfoh rihu
 
 ?>
 
